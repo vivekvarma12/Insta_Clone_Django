@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>Welcome</title>
+<style>
+.chip{
+  padding:1px 30px 20px 30px;
+}
+#select{
+  left : 10px;
+}
+#sub{
+  background-color: green;
+}
+.bg-img {
+  border: 3px solid;
+  padding: 30px 30px 30px 187px;
+  border-radius: 3%;
+  min-height: 380px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  box-shadow: 10px 10px 10px 10px rgba(0.2,0.2,0,0.2);
+}
+
+input[type=text],[type=password], .message{
+  width: 71%;
+  padding: 15px;
+  margin: px 0 22px 0;
+}
+input[type=submit]{
+  width: 71%;
+  color: white;
+}
+.container {
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+}
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
+    <script>
+        function valid(){
+            if((document.form.user.value == "") || (document.form.passy.value == "")){
+                alert("Username/password should not be empty");
+                return false;
+            }
+        }
+    </script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="home" class="w3-bar-item w3-button"><b>Plug</b>In</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="login" class="w3-bar-item w3-button">Login</a>
+      <a href="signup" class="w3-bar-item w3-button">SignUp</a>
+    </div>
+  </div>
+</div>
+<br><br><br><br>
+<div class="bg-img" style="width:800px; margin:0 auto">
+    <h1 style="color:blue;"> Login Form </h1>
+  <form action="log_in" method="POST" name="form" onsubmit="return valid()">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="usr">Username</label>
+        <input type="text" class="form-control" name="user" id="cardNo" required>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password</label>
+        <input type="password" class="form-control" name="passy" id="cardName" required>
+      </div>
+      <input type="submit" class="form-control" id="sub" value="Submit">
+    </form>
+<br><br>
+    <div>
+        {% if messages %}
+        {% for mess in messages %}
+        <h3 style="position: relative; left: 25px; top: -30px; color: green; font-family: Lucida Console, Courier New, monospace;">{{ mess }}</h3>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>

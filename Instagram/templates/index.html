@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<title>Welcome</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+#body{
+  background-image: url('{% static 'guitar.jpg' %}');
+  background-repeat: no-repeat;
+  background-size: 1300px 700px;
+  }
+</style>
+
+<body id="body">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="" class="w3-bar-item w3-button"><b>Plug</b>In</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="login" class="w3-bar-item w3-button">Login</a>
+      <a href="signup" class="w3-bar-item w3-button">SignUp</a>
+    </div>
+  </div>
+  <div class="w3-bottom">
+    <center>
+    <iframe style="border-radius:25px" width="50%" height="250" src="https://maps.google.com/maps?width=75%&amp;height=150&amp;hl=en&amp;coord=22.960391925328498, 80.01756744026137&amp;q=Rajahmundry%20India&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="2" scrolling="yes">
+    </iframe>
+    </center>
+  </div>
+</div>
+</body>
+</html>

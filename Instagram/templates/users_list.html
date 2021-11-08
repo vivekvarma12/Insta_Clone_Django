@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'user_auth.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity=
+"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+</head>
+<body>
+{% block content %}
+<br>
+<br>
+<div class="bg-img" style="width:500px; margin:auto">
+    <br><br>
+        {% if users %}
+    &nbsp;&nbsp;<b><u>Please check the list with similar names</u></b>
+    <ul>
+        {% for i in users %}
+        <div>
+        <form action="send_req"  method="POST">
+            <li style="display:inline-block"><b>{{i}}</b></li>
+            <input type="submit" style="display:inline-block" value="send request" onclick="alert('Request Sent...')">
+         </form>
+        </div>
+        <br>
+        {% endfor %}
+        {% else %}
+        <center><b>No users list found!!</b></center>
+     </ul>
+        {% endif %}
+</div>
+{% endblock %}
+</body>
+</html>
